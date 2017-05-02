@@ -5,3 +5,4 @@
     1. Invoke:  `$(project_home) java -cp target/jna-demo_xxx.jar com.myles.demo.App` 
     - note. The DLL should be proven with `$ file {dll_name}.dll` that its 32/64bit
     - note. The DLL must be put at the directory where the JVM runs. If not, change the command to this `$(project_home) java -Djna.library.path={path_to_dll_folder} -cp target/jna-demo_xxx.jar com.myles.demo.App` 
+    - note. Run the JVM in cygwin-bash, if use git-bash, some system depenedency would be missed.
