@@ -4,8 +4,7 @@
 
 using namespace std;
 
-
-char * decode()
+char * decode(char * filename)
 {
-	return "pingLM:decode()";
+	return filename;
 }
