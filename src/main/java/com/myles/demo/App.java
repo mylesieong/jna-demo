@@ -2,26 +2,20 @@ package com.myles.demo;
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;
-import com.sun.jna.Platform;
+import com.sun.jna.ptr.FloatByReference;
 
-/** Simple example of JNA interface mapping and usage. */
-public class App {
-
-    // This is the standard, stable way of mapping, which supports extensive
-    // customization and mapping of Java to native types.
-
-    public interface CLibrary extends Library {
-        CLibrary INSTANCE = (CLibrary)
-            Native.loadLibrary((Platform.isWindows() ? "msvcrt" : "c"),
-                               CLibrary.class);
-
-        void printf(String format, Object... args);
-    }
+public class App{
+    
+	public interface DllInterface extends Library {
+		DllInterface INSTANCE = (DllInterface) Native.loadLibrary("simpleDLL", DllInterface.class);
+		int multiply(float a, float b, FloatByReference result);
+		int sumArray(float[] a, int length, FloatByReference result);
+		String getVersion ();
+		int addValue (float a [], int length, float value);
+	}
 
     public static void main(String[] args) {
-        CLibrary.INSTANCE.printf("Hello, World\n");
-        for (int i=0;i < args.length;i++) {
-            CLibrary.INSTANCE.printf("Argument %d: %s\n", i, args[i]);
-        }
+		System.out.println("SimpleDll r: ");
     }
+
 }
