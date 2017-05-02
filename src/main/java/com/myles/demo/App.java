@@ -7,7 +7,7 @@ import com.sun.jna.ptr.FloatByReference;
 public class App{
     
 	public interface DllInterface extends Library {
-		DllInterface INSTANCE = (DllInterface) Native.loadLibrary("simpleDLL", DllInterface.class);
+		DllInterface INSTANCE = (DllInterface) Native.loadLibrary("heyDLL", DllInterface.class);
 		int multiply(float a, float b, FloatByReference result);
 		int sumArray(float[] a, int length, FloatByReference result);
 		String getVersion ();
@@ -39,8 +39,9 @@ public class App{
  
     public static void main(String[] args) {
 		App t = new App();
-		float r = t.multiply(3.1f, 3f);
-		System.out.println("SimpleDll r: " + r);
+		//float r = t.multiply(3.1f, 3f);
+		//System.out.println("SimpleDll r: " + r);
+		System.out.println(t.getVersion());
     }
 
 }
