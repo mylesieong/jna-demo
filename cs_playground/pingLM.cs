@@ -12,8 +12,8 @@ using FreeImageAPI;
 using System.Drawing.Imaging;
 
 class HelloWorldWin {
-    static void Main() {
-        string filename = "0008881.jpg";
+    static void Main(string[] args) {
+        string filename = args[0];
         FREE_IMAGE_FORMAT fif = FREE_IMAGE_FORMAT.FIF_UNKNOWN;
         fif = FreeImage.GetFileType(filename, 0);
         if (fif == FREE_IMAGE_FORMAT.FIF_UNKNOWN)
