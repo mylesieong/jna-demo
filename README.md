@@ -10,3 +10,7 @@
     - The original code is using C#, maybe we can try to **ping the g++ compile C# as dll** possibility? 
     - Now reading the C++ tutorial, some retrofit will be made on the C# code if we stick to C++
     - The deadline is monday update
+- **2017-05-04**:
+    - I ping the csc c# compiler and can ping the decode() method!
+    - Cannot use JNA to call C# dll becuase the nature is: *JNA -> C/C++ -> C#*
+    - So to close this issue, we will use `Runtime.getRuntime().exec(String)` in java to call a c# program that parse its input image file and output a string. Then use the java wrapper to add features like iterate folder.
